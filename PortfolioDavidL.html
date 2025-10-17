@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Dantas Laborda - Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #00d4ff;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        section {
+            margin: 80px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #00d4ff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff 0%, #00ff88 100%);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            padding: 20px;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .skill-card h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .experience-item h3 {
+            color: #00ff88;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #00d4ff;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .education-item {
+            padding: 25px;
+            background: rgba(0, 212, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .education-item h3 {
+            color: #00ff88;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-photo">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAH0AfQDASIAAhEBAxEB/8QAHAABAQEBAQEBAQEAAAAAAAAAAAQFAwIGAQcI/8QAUxAAAQMDAgEHBwkEBQkGBwAAAQACAwQFEQYSITETFCIxQWGRByMyUlJxgRUWQmNiobHSIzOCgxRTcpJzJENEVGOissLh8CU0ZHSTs9Hx/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAEDAgUGBAf/xAA0EQEAAQIDBgQFBAICAwAAAAAAAQIRAwQFEiExQVGRE2GBsRQiMnGhBiNCwRXRM1Jicv/aoADAMBAAIRAxEAPwD90REBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARFUu1vsNBTOmuF3o6KFuN0k7wwa/kMk5PYgyUX9H/wCxmiv8n/qfzT/YzRP9e9v7y/8ANBL/ALFRH/f1l/pH/mjp/wCxmif69/f3l/5of+xmiv8AXv7+8v8AzU/2H8X90FUT6u1XYLfbyZrrTVE7sFsNG5rmZzjJJAHVg+1YzO10l97ZCf8AMUif49T/APpaf/VpV+1f/VFX3wJiY4pzEzDVsl4obtUy01NcIpoJGZfTzyYkmYOkmM5OBkHjjINY5Vfuf+xmif69/f3l/wCaH/sZov8AXv7+8v8AzT/Yfw/3QL6V7ndmFbwXOPD5oW/oQfxSqQf6+1R/X0w/FqLiujS6asl0qK+8V8dvpoS1rWGPfI4u3ZIBIHB8e0nPWVWXk79D+gq/aHzRQZy/Y/8Aav8A9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
+            <h1>David Dantas Laborda</h1>
+            <p class="subtitle">Especialista em Suporte Técnico & TI</p>
+            <div class="contact-info">
+                <a href="tel:69992848108" class="contact-item">
+                    <span>📱</span> (69) 99284-8108
+                </a>
+                <a href="mailto:david.pvh18@hotmail.com" class="contact-item">
+                    <span>✉️</span> david.pvh18@hotmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/david-dantas-laborda-9138bb12a" target="_blank" class="contact-item">
+                    <span>💼</span> LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p style="font-size: 18px; line-height: 1.8;">
+                Profissional de TI com sólida experiência em suporte técnico, manutenção de equipamentos e atendimento aos usuários. 
+                Atualmente cursando Licenciatura em Informática na UFRR, com histórico comprovado em ambientes corporativos e instituições públicas. 
+                Especializado em sistemas Windows, TOTVS e CISS, com forte capacidade de resolução de problemas e facilidade no aprendizado de novas tecnologias.
+            </p>
+        </section>
+
+        <section id="competencias">
+            <h2>Competências Principais</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🔧 Suporte Técnico</h3>
+                    <p>N1 e N2, remoto e presencial</p>
+                </div>
+                <div class="skill-card">
+                    <h3>💻 Sistemas Operacionais</h3>
+                    <p>Windows 10/11, gestão e suporte</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🛠️ Manutenção</h3>
+                    <p>Hardware e equipamentos de informática</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📊 Sistemas Empresariais</h3>
+                    <p>TOTVS, CISS e helpdesk</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎯 Resolução de Problemas</h3>
+                    <p>Diagnóstico e soluções eficientes</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📚 Aprendizado Rápido</h3>
+                    <p>Adaptação a novas tecnologias</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            
+            <div class="experience-item">
+                <h3>Assistente de TI</h3>
+                <p class="company">Lojas Milla</p>
+                <p class="period">Setembro 2023 - Atual | Porto Velho, RO</p>
+                <p>Prestação de suporte remoto e presencial aos usuários, manutenção e consertos de equipamentos de informática, suporte básico no sistema TOTVS.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Suporte Técnico N2</h3>
+                <p class="company">Lanlink Informática</p>
+                <p class="period">Agosto 2023 - Setembro 2023 | Porto Velho, RO</p>
+                <p>Cobertura de férias na Amaggi Porto Velho, prestando suporte aos usuários de forma remota e presencial, gestão de tickets e atribuições de suporte helpdesk.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Técnico em Manutenção de Equipamentos de Informática</h3>
+                <p class="company">ZOOMtecnologia - Justiça Federal de Rondônia</p>
+                <p class="period">Fevereiro 2023 - Maio 2023 | Porto Velho, RO</p>
+                <p>Suporte presencial e remoto aos usuários, gestão de tickets e funções técnicas especializadas.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Assistente N1</h3>
+                <p class="company">Lanlink Informática - Justiça Federal de Rondônia</p>
+                <p class="period">Outubro 2022 - Fevereiro 2023 | Porto Velho, RO</p>
+                <p>Suporte remoto aos usuários, abertura e fechamento de tickets.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Técnico de Suporte em TI</h3>
+                <p class="company">NB Engenharia Construtora e Conservadora</p>
+                <p class="period">Maio 2021 - Setembro 2022 | Porto Velho, RO</p>
+                <p>Suporte presencial aos colaboradores, administração de Windows 10/11 e sistema CISS, manutenção de equipamentos.</p>
+            </div>
+        </section>
+
+        <section id="formacao">
+            <h2>Formação Acadêmica</h2>
+            
+            <div class="education-item">
+                <h3>Licenciatura em Informática - EaD</h3>
+                <p class="institution">Universidade Federal de Roraima (UFRR)</p>
+                <p class="period">Abril 2025 - Dezembro 2028</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Técnico em Informática</h3>
+                <p class="institution">SENAC Brasil</p>
+                <p class="period">Setembro 2024 - Novembro 2025</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Técnico em Secretaria Escolar</h3>
+                <p class="institution">IF Baiano - Campus Guanambi</p>
+                <p class="period">Março 2025 - Julho 2026</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Técnico em Multimeios Didáticos</h3>
+                <p class="institution">IFSP - Campus São João da Boa Vista</p>
+                <p class="period">Junho 2024 - Dezembro 2025</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Technical Support Fundamentals</h3>
+                <p class="institution">Google/Coursera</p>
+                <p class="period">Junho 2025 - Setembro 2025</p>
+            </div>
+
+            <div class="education-item">
+                <h3>IT Essentials - Hardware and Software</h3>
+                <p class="institution">Cisco/SENAI-RO</p>
+                <p class="period">Setembro 2014 - Novembro 2014</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 David Dantas Laborda. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px;">Porto Velho, Rondônia, Brasil</p>
+        </footer>
+    </div>
+</body>
+</html>
